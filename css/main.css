@@ -4,10 +4,16 @@
 =============================================*/
 /*! Start Variables */
 :root {
-  --main-color: #2196f3;
-  --alternative-color: #1787e0;
+  --main-blue-color: #0075ff;
+  --alternative-blue-color: #0d69d5;
   --third-color: #403ca5;
+  --orange-color: #f59e0b;
+  --green-color: #22c55e;
+  --red-color: #f44336;
+  --color-grey: #888;
+  --light-color-grey: #ccc;
   /* --secondary-color: #2c4755; */
+
   --main-paragraph-color: #858585;
   --section-main-background-color: white;
   --section-alt-background-color: #ececec;
@@ -56,55 +62,40 @@ ul {
   padding: 0;
 }
 
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: white;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--main-blue-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--alternative-blue-color);
+}
+
 *:focus {
   outline: none;
 }
 
-/* .container {
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-left: auto;
-  margin-right: auto;
-} */
-
-/*=============================================
-  Responsive Design: Small Screens
-  Breakpoints for devices >= small width (usually tablets)
-=============================================*/
-/* Small Screens */
-@media (min-width: 768px) {
-  .container {
-    width: 750px;
-  }
-}
-
-/* Medium Screens */
-@media (min-width: 992px) {
-  .container {
-    width: 970px;
-  }
-}
-
-/* Large Screens */
-@media (min-width: 1200px) {
-  .container {
-    width: 1170px;
-  }
-}
 /*! End Global Rules */
 
 /*! Start Components */
-/*? Start Main Header Components */
+/*? Start   Component */
 
-/*? End Main Header Components */
+/*? End   Component */
 
-/*? Start   */
+/*? Start  Component */
 
-/*? End   */
+/*? End  Component */
 
-/*? Start   */
+/*? Start  Component */
 
-/*? End   */
+/*? End  Component */
 /*! End Components */
 
 /*---------------------------------------------
@@ -203,35 +194,185 @@ ul {
 /*! End Sidebar */
 
 /*! Start Content */
-.page .content {
-}
-.page .content .header {
-}
-.page .content .header .search-area {
-}
 .page .content .header .search-area::before {
-  content: "";
-  font-family: "Font Awesome";
+  content: "\F002";
+  font-family: var(--fa-style-family-classic);
+  font-weight: bold;
+  color: var(--color-grey);
+  position: absolute;
+  top: 50%;
+  left: 21px;
+  transform: translateY(-50%);
 }
 
 .page .content .header input {
-  margin: 20px 25px;
+  margin-left: 10px;
+  padding-left: 33px;
+  width: 180px;
+  transition: width var(--main-transition-duration);
+  border: 1px solid var(--light-color-grey);
   border-radius: 12px;
 }
 
 .page .content .header input:focus {
+  width: 220px;
+}
+
+/*---------------------------------------------
+  Media Queries
+  Responsive adjustments for different screens
+----------------------------------------------*/
+@media (max-width: 767px) {
+  .page .content .header input:focus {
+    width: 200px;
+  }
 }
 
 .page .content .header input:focus::placeholder {
-}
-
-.page .content .header .header-icons {
+  opacity: 0;
 }
 
 .page .content .header .header-icons .notification-center {
+  margin-right: 15px;
+  font-size: 22px;
+}
+
+.page .content .header .header-icons .notification-center::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--red-color);
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateY(-50%);
 }
 
 .page .content .header .header-icons .profile-avatar {
-  width: 50px;
+  width: 40px;
+}
+
+.page .content h1 {
+  margin-left: 20px;
+}
+
+.page .content h1::before,
+.page .content h1::after {
+  position: absolute;
+  content: "";
+  height: 5px;
+  bottom: -13px;
+}
+
+.page .content h1::before {
+  width: 60px;
+  background-color: black;
+  left: 3px;
+}
+
+.page .content h1::after {
+  width: 105px;
+  background-color: white;
+  left: 62px;
+}
+
+.page .content .wrapper {
+  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-top: 20px;
+}
+
+/*---------------------------------------------
+  Media Queries
+  Responsive adjustments for different screens
+----------------------------------------------*/
+@media (max-width: 767px) {
+  .page .content .wrapper {
+    grid-template-columns: minmax(200px, 1fr);
+    gap: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
 }
 /*! End Content */
+
+/*! Start Welcome Widget */
+.page .content .wrapper .welcome-content-box {
+  overflow: hidden;
+}
+
+.page .content .wrapper .welcome-content-box p.user-handle {
+  text-align: center;
+}
+
+.page .content .wrapper .welcome-content-box .greeting-image {
+  width: 180px;
+  margin-bottom: -15px;
+}
+
+.page .content .wrapper .welcome-content-box .profile-avatar {
+  width: 68px;
+  height: 68px;
+  margin: -34px 0 0 40px;
+  border: 5px solid white;
+  border-radius: 50px;
+  padding: 2px;
+}
+
+.page .content .wrapper .welcome-content-box .profile-info {
+  /* margin: 60px 0 20px; */
+  border-top: 1px solid #ececec;
+  border-bottom: 1px solid #ececec;
+}
+
+.page .content .wrapper .welcome-content-box .profile-info > div {
+  /* padding: 20px 40px; */
+  flex: 1;
+}
+
+.page .content .wrapper .welcome-content-box .visit-profile {
+  margin: 0 20px 20px auto;
+  transition: var(--main-transition-duration);
+}
+
+.page .content .wrapper .welcome-content-box .visit-profile:hover {
+  background-color: var(--alternative-blue-color);
+}
+
+/*---------------------------------------------
+  Media Queries
+  Responsive adjustments for different screens
+----------------------------------------------*/
+@media (max-width: 767px) {
+  .page .content .wrapper .welcome-content-box .greeting-image {
+    width: 120px;
+  }
+
+  .page .content .wrapper .welcome-content-box .profile-avatar {
+    margin: -34px auto;
+  }
+  .page .content .wrapper .welcome-content-box .profile-info {
+    margin-top: 30px;
+  }
+  .page .content .wrapper .welcome-content-box .profile-info > div {
+    padding: 15px;
+  }
+}
+/*! End Welcome Widget */
+
+/*! Start Quick Draft */
+.page .content .wrapper .quick-draft-content-box .save-entry {
+  margin: 0 0 20px auto;
+  cursor: pointer;
+  transition: var(--main-transition-duration);
+}
+
+.page .content .wrapper .quick-draft-content-box .save-entry:hover {
+  background-color: var(--alternative-blue-color);
+}
+
+/*! End Quick Draft */
+
+/*! End */
