@@ -26,6 +26,7 @@
   --main-section-padding-bottom: 100px;
 
   --main-transition-duration: 0.3s;
+  --alt-transition-duration: 0.7s;
 }
 /*! End Variables */
 
@@ -281,6 +282,7 @@ ul {
   grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
   margin-left: 20px;
   margin-right: 20px;
+  /* margin-bottom: 20px; */
   padding-top: 20px;
 }
 
@@ -518,11 +520,269 @@ ul {
   /* background-color: #d8f4e1; */
   background-color: rgb(34 197 94 / 0.2);
 }
+/*! End Yearly Targets */
 
-@media(max-width:767px){
-  .page .content .wrapper .yearly-targets-content-box .projects-row sp {
-    
-  }
+/*! Start Tickets Statistics */
+.page
+  .content
+  .wrapper
+  .tickets-statistics-content-box
+  .statistics
+  .tickets-statistics-box {
+  width: calc(50% - 10px);
+  border: 2px solid var(--light-color-grey);
 }
 
-/*! End Yearly Targets */
+@media (max-width: 767px) {
+  .page
+    .content
+    .wrapper
+    .tickets-statistics-content-box
+    .statistics
+    .tickets-statistics-box {
+    width: 100%;
+  }
+}
+/*! End Tickets Statistics */
+
+/*! Start Latest News */
+.page
+  .content
+  .wrapper
+  .latest-news-content-box
+  .latest-news-row:not(:last-of-type) {
+  padding: 20px 0 20px;
+  border-bottom: 1px solid #ececec;
+}
+
+/*---------------------------------------------
+  Media Queries
+  Responsive adjustments for different screens
+----------------------------------------------*/
+@media (max-width: 767px) {
+  .page .content .wrapper .latest-news-content-box {
+    margin-bottom: 20px;
+  }
+  .page .content .wrapper .latest-news-content-box .latest-news-row .image {
+    width: 150px;
+    margin-bottom: 20px;
+  }
+  .page .content .wrapper .latest-news-content-box .latest-news-row .news-info {
+    margin-bottom: 15px;
+  }
+}
+/*! End Latest News */
+
+/*! Start Latest Tasks */
+.page .content .wrapper .latest-tasks-content-box .latest-task-row {
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+}
+
+.page
+  .content
+  .wrapper
+  .latest-tasks-content-box
+  .latest-task-row:not(:last-of-type) {
+  border-bottom: 1px solid #ececec;
+}
+
+.page .content .wrapper .latest-tasks-content-box .remove-task {
+  cursor: pointer;
+  transition: var(--main-transition-duration);
+}
+
+.page .content .wrapper .latest-tasks-content-box .remove-task:hover {
+  color: var(--red-color);
+}
+
+.page .content .wrapper .latest-tasks-content-box .complete-task {
+  opacity: 0.3;
+}
+
+.page .content .wrapper .latest-tasks-content-box .complete-task h3,
+.page .content .wrapper .latest-tasks-content-box .complete-task p {
+  text-decoration: line-through;
+}
+/*! End Latest Tasks */
+
+/*! Start Latest Upload */
+.page
+  .content
+  .wrapper
+  .latest-uploads-content-box
+  .uploaded-files-list
+  .uploaded-file-row:not(:last-of-type) {
+  border-bottom: 1px solid #ececec;
+  /* padding-bottom: 10px; */
+}
+/*! End Latest Upload */
+
+/*! Start Last Project Progress Widget */
+.page
+  .content
+  .wrapper
+  .last-project-progress-content-box
+  .project-progress::before {
+  content: "";
+  position: absolute;
+  left: 15px;
+  width: 5px;
+  height: 100%;
+  background-color: var(--main-blue-color);
+}
+
+.page
+  .content
+  .wrapper
+  .last-project-progress-content-box
+  .project-progress
+  .project-progress-row::before {
+  content: "";
+  display: block;
+  z-index: 1;
+  margin-right: 20px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: white;
+  border: 3px solid white;
+  outline: 3px solid var(--main-blue-color);
+}
+
+.page
+  .content
+  .wrapper
+  .last-project-progress-content-box
+  .project-progress
+  .project-progress-row.project-phase-done::before {
+  content: "";
+  background-color: var(--main-blue-color);
+}
+
+.page
+  .content
+  .wrapper
+  .last-project-progress-content-box
+  .project-progress
+  .project-progress-row.project-current-phase::before {
+  content: "";
+
+  /*? If we want to hide the outline for the circle:  
+  width: 36px;
+  height: 36px;
+  border-style: none;
+  ************************************************/
+
+  animation: switch-background-color var(--alt-transition-duration) infinite
+    alternate;
+}
+
+.page
+  .content
+  .wrapper
+  .last-project-progress-content-box
+  .launch-project-icon {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  opacity: 0.08;
+}
+/*! End Last Project Progress Widget */
+
+/*! Start Reminders Widget */
+.page
+  .content
+  .wrapper
+  .reminders-content-box
+  .reminder-list
+  .reminder
+  .info-blue-reminder {
+  border-left: 3px solid var(--main-blue-color);
+}
+
+.page
+  .content
+  .wrapper
+  .reminders-content-box
+  .reminder-list
+  .reminder
+  .circle-blue-check {
+  width: 20px;
+  height: 20px;
+}
+
+.page
+  .content
+  .wrapper
+  .reminders-content-box
+  .reminder-list
+  .reminder
+  .info-green-reminder {
+  border-left: 3px solid var(--green-color);
+}
+
+.page
+  .content
+  .wrapper
+  .reminders-content-box
+  .reminder-list
+  .reminder
+  .circle-green-check {
+  width: 20px;
+  height: 20px;
+}
+
+.page
+  .content
+  .wrapper
+  .reminders-content-box
+  .reminder-list
+  .reminder
+  .info-orange-reminder {
+  border-left: 3px solid var(--orange-color);
+}
+
+.page
+  .content
+  .wrapper
+  .reminders-content-box
+  .reminder-list
+  .reminder
+  .circle-orange-check {
+  width: 20px;
+  height: 20px;
+}
+
+.page
+  .content
+  .wrapper
+  .reminders-content-box
+  .reminder-list
+  .reminder
+  .info-red-reminder {
+  border-left: 3px solid var(--red-color);
+}
+
+.page
+  .content
+  .wrapper
+  .reminders-content-box
+  .reminder-list
+  .reminder
+  .circle-red-check {
+  width: 20px;
+  height: 20px;
+}
+/*! End Reminders Widget */
+
+/*! Start Animation */
+@keyframes switch-background-color {
+  from {
+    background-color: var(--main-blue-color);
+  }
+  to {
+    background-color: white;
+  }
+}
+/*! End Animation */
