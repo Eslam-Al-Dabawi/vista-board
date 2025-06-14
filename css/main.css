@@ -14,9 +14,22 @@
   --light-color-grey: #ccc;
   /* --secondary-color: #2c4755; */
 
+  /*? Brands */
+  /* Twitter */
+  --twitter-color: #1da1f2;
+
+  /* Facebook */
+  --facebook-color: #1877f2;
+
+  /* YouTube */
+  --youtube-color: #ff0000;
+
+  /* LinkedIn */
+  --linkedin-color: #0a66c2;
+
   --main-paragraph-color: #858585;
+  --main-border-color: #ececec;
   --section-main-background-color: white;
-  --section-alt-background-color: #ececec;
   --transparent-color: rgb(15 116 143 / 65%);
 
   --main-line-height: 1.8;
@@ -325,8 +338,8 @@ ul {
 
 .page .content .wrapper .welcome-content-box .profile-info {
   /* margin: 60px 0 20px; */
-  border-top: 1px solid #ececec;
-  border-bottom: 1px solid #ececec;
+  border-top: 1px solid var(--main-border-color);
+  border-bottom: 1px solid var(--main-border-color);
 }
 
 .page .content .wrapper .welcome-content-box .profile-info > div {
@@ -552,7 +565,7 @@ ul {
   .latest-news-content-box
   .latest-news-row:not(:last-of-type) {
   padding: 20px 0 20px;
-  border-bottom: 1px solid #ececec;
+  border-bottom: 1px solid var(--main-border-color);
 }
 
 /*---------------------------------------------
@@ -584,7 +597,7 @@ ul {
   .wrapper
   .latest-tasks-content-box
   .latest-task-row:not(:last-of-type) {
-  border-bottom: 1px solid #ececec;
+  border-bottom: 1px solid var(--main-border-color);
 }
 
 .page .content .wrapper .latest-tasks-content-box .remove-task {
@@ -613,7 +626,7 @@ ul {
   .latest-uploads-content-box
   .uploaded-files-list
   .uploaded-file-row:not(:last-of-type) {
-  border-bottom: 1px solid #ececec;
+  border-bottom: 1px solid var(--main-border-color);
   /* padding-bottom: 10px; */
 }
 /*! End Latest Upload */
@@ -707,7 +720,10 @@ ul {
   .reminders-content-box
   .reminder-list
   .reminder
-  .circle-blue-check {
+  .circle-blue-check,
+.circle-green-check,
+.circle-orange-check,
+.circle-red-check {
   width: 20px;
   height: 20px;
 }
@@ -722,7 +738,7 @@ ul {
   border-left: 3px solid var(--green-color);
 }
 
-.page
+/* .page
   .content
   .wrapper
   .reminders-content-box
@@ -731,7 +747,7 @@ ul {
   .circle-green-check {
   width: 20px;
   height: 20px;
-}
+} */
 
 .page
   .content
@@ -743,7 +759,7 @@ ul {
   border-left: 3px solid var(--orange-color);
 }
 
-.page
+/* .page
   .content
   .wrapper
   .reminders-content-box
@@ -752,7 +768,7 @@ ul {
   .circle-orange-check {
   width: 20px;
   height: 20px;
-}
+} */
 
 .page
   .content
@@ -764,7 +780,7 @@ ul {
   border-left: 3px solid var(--red-color);
 }
 
-.page
+/* .page
   .content
   .wrapper
   .reminders-content-box
@@ -773,8 +789,46 @@ ul {
   .circle-red-check {
   width: 20px;
   height: 20px;
-}
+} */
 /*! End Reminders Widget */
+
+/*! Start Social Media  */
+.page .content .wrapper .social-media-stats-content-box .social-account-row {
+  padding-left: 70px;
+}
+
+.page .content .wrapper .social-media-stats-content-box .social-account-row i {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60px;
+  transition: var(--main-transition-duration);
+}
+
+.page .content .wrapper .social-media-stats-content-box .social-account-row i:hover {
+  transform: rotate(5deg);
+}
+
+.page .content .wrapper .social-media-stats-content-box .twitter-account {
+  background-color: rgb(29 161 242 / 30%);
+  color: var(--twitter-color);
+}
+
+.page .content .wrapper .social-media-stats-content-box .facebook-account {
+  background-color: rgb(24 119 242 / 30%);
+  color: var(--facebook-color);
+}
+
+.page .content .wrapper .social-media-stats-content-box .youtube-account {
+  background-color: rgb(255 0 0 / 30%);
+  color: var(--youtube-color);
+}
+
+.page .content .wrapper .social-media-stats-content-box .linkedin-account {
+  background-color: rgb(10 102 194 / 30%);
+  color: var(--linkedin-color);
+}
+/*! End Social Media  */
 
 /*! Start Animation */
 @keyframes switch-background-color {
