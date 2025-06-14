@@ -805,7 +805,12 @@ ul {
   transition: var(--main-transition-duration);
 }
 
-.page .content .wrapper .social-media-stats-content-box .social-account-row i:hover {
+.page
+  .content
+  .wrapper
+  .social-media-stats-content-box
+  .social-account-row
+  i:hover {
   transform: rotate(5deg);
 }
 
@@ -827,6 +832,15 @@ ul {
 .page .content .wrapper .social-media-stats-content-box .linkedin-account {
   background-color: rgb(10 102 194 / 30%);
   color: var(--linkedin-color);
+}
+
+.page
+  .content
+  .wrapper
+  .social-media-stats-content-box
+  .social-account-row
+  a:hover {
+  cursor: pointer;
 }
 /*! End Social Media  */
 
