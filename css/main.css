@@ -844,6 +844,14 @@ ul {
 }
 /*! End Social Media  */
 
+/*! Start Projects Widget */
+.projects-content-box .responsive-table {
+  overflow-x: auto;
+}
+
+
+/*!End Projects Widget */
+
 /*! Start Animation */
 @keyframes switch-background-color {
   from {
@@ -854,5 +862,3 @@ ul {
   }
 }
 /*! End Animation */
-
-
